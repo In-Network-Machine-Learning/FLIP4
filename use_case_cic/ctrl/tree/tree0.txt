@@ -1,0 +1,7 @@
+fA = [85];
+fB = [];
+fC = [];
+fD = [];
+fE = [];
+ when fA<=85.0  then 0;
+ when fA>85.0  then 1;

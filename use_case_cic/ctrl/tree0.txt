@@ -1,0 +1,2 @@
+ when f0<=85.0  then 0;
+ when f0>85.0  then 1;

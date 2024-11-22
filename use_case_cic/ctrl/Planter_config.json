@@ -1,0 +1,68 @@
+{
+    "directory config": {
+        "data": "/media/sf_vmshare",
+        "work": "/home/p4/INML-MQTT-ctl/p4runtime/ctrl"
+    },
+    "model config": {
+        "model": "DT",
+        "type": "1",
+        "number of depth": 4,
+        "max number of leaf nodes": 1000,
+        "number of classes": 2
+    },
+    "data config": {
+        "dataset": "Edge-IIoTset",
+        "number of features": 5
+    },
+    "timer log": {
+        "load data": {
+            "start": 1649439892.8960297,
+            "end": 1649439910.68009
+        },
+        "python-based test": {
+            "start": 1649439918.827198,
+            "end": 1649439926.9395337
+        }
+    },
+    "p4 config": {
+        "model": "DT",
+        "number of features": 5,
+        "number of classes": 2,
+        "table name": "Exact_Table.json",
+        "code table size": 24,
+        "width of feature": [
+            17,
+            17,
+            6,
+            9,
+            9
+        ],
+        "width of code": [
+            2.0,
+            4.0,
+            1.0,
+            2.0,
+            1.0
+        ],
+        "used columns": [
+            65536,
+            65534,
+            18,
+            176,
+            176
+        ],
+        "width of probability": 7,
+        "width of result": 8
+    },
+    "test config": {
+        "type of test": "classification",
+        "port": "eth0",
+        "sudo password": "p4"
+    },
+    "target config": {
+        "architecture": "v1model",
+        "use case": "anomaly_detection",
+        "device": "t4p4s",
+        "type": "compile"
+    }
+}
