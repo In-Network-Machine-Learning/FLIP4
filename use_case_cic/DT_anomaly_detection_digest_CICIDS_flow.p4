@@ -1,4 +1,11 @@
 ########################################################################
+# Copyright (c) Mingyuan Zang, Tomasz Koziak, Networks Technology and Service Platforms Group, Technical University of Denmark
+# This work was partly done at Computing Infrastructure Group, University of Oxford
+# All rights reserved.
+# E-mail: mingyuanzang@outlook.com
+# Licensed under the Apache License, Version 2.0 (the 'License')
+########################################################################
+###############################################################################################################################################
 # THIS FILE IS PART OF Planter PROJECT
 # Copyright (c) Changgang Zheng and Computing Infrastructure Lab
 # Departement of Engineering Science, University of Oxford
@@ -254,7 +261,7 @@ struct metadata_t {
     bit<32> current_flow_id;
     bit<1> found_entry;
     bit<FLOW_ENTRY_WIDTH> bitstring;
-    
+
     bit<2> meter_color;
     bit<2> meter_tag;
 }
@@ -379,7 +386,7 @@ control SwitchIngress(
     inout header_t hdr,
     inout metadata_t meta,
     inout standard_metadata_t ig_intr_md) {
-    
+
     // refer to: https://gitlab.ethz.ch/nsg/public/adv-net-2020/-/blob/master/03-RSVP/solution/rsvp.p4
     /* Direct meter*/
     //direct_meter<bit<2>>(MeterType.bytes) rsvp_meter;
@@ -622,11 +629,11 @@ control SwitchIngress(
         hdr.ethernet.dst_addr = dstAddr;
         hdr.ipv4.ttl = hdr.ipv4.ttl - 1;
     }
-    
+
     action m_action ( bit <32 > meter_id ) {
 	rsvp_meter.execute_meter (( bit <32 >) meter_id, meta.meter_tag ) ;
     }
-    
+
     table meter_table {
 	key = {
 	    meta.meter_color: exact ;
@@ -647,7 +654,7 @@ control SwitchIngress(
  	drop ;
  	NoAction ;
   	}
-	 
+
 	size = 1024;
  	default_action = drop () ;
 	}
@@ -933,7 +940,7 @@ control SwitchIngress(
             } else {
                 counter_false_attack.count(0);// malicious flows but not detected as the exact type
             }
-            
+
          }
          else {
             if(meta.result == 0) {
@@ -943,7 +950,7 @@ control SwitchIngress(
                 counter_false_benign.count(0);
             }
         }
-	
+
         digest<int_cpu_digest_t>(1, {hdr.ipv4.src_addr, hdr.ipv4.dst_addr, meta.feature0, meta.feature1, meta.feature2, meta.feature3, meta.feature4, (bit<4>)meta.malware, (bit<4>)meta.result});
     }
 }

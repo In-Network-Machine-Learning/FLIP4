@@ -1,4 +1,10 @@
-import pandas as pd
+########################################################################
+# Copyright (c) Mingyuan Zang, Tomasz Koziak, Networks Technology and Service Platforms Group, Technical University of Denmark
+# This work was partly done at Computing Infrastructure Group, University of Oxford
+# All rights reserved.
+# E-mail: mingyuanzang@outlook.com
+# Licensed under the Apache License, Version 2.0 (the 'License')
+########################################################################
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import make_classification

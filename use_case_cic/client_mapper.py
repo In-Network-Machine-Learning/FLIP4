@@ -1,4 +1,10 @@
-from federated_gbdt.models.gbdt.private_gbdt import PrivateGBDT
+########################################################################
+# Copyright (c) Mingyuan Zang, Tomasz Koziak, Networks Technology and Service Platforms Group, Technical University of Denmark
+# This work was partly done at Computing Infrastructure Group, University of Oxford
+# All rights reserved.
+# E-mail: mingyuanzang@outlook.com
+# Licensed under the Apache License, Version 2.0 (the 'License')
+########################################################################
 from FL.data_loader import DataLoader
 from sklearn.metrics import roc_auc_score
 import numpy as np
