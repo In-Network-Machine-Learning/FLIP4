@@ -1,0 +1,624 @@
+pkg_info {
+  arch: "v1model"
+}
+tables {
+  preamble {
+    id: 47421783
+    name: "SwitchIngress.meter_table"
+    alias: "meter_table"
+  }
+  match_fields {
+    id: 1
+    name: "meta.meter_color"
+    bitwidth: 2
+    match_type: EXACT
+  }
+  action_refs {
+    id: 19914743
+  }
+  action_refs {
+    id: 21257015
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 40168678
+    name: "SwitchIngress.meter_filter"
+    alias: "meter_filter"
+  }
+  match_fields {
+    id: 1
+    name: "meta.meter_tag"
+    bitwidth: 2
+    match_type: EXACT
+  }
+  action_refs {
+    id: 23258667
+  }
+  action_refs {
+    id: 21257015
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 38457596
+    name: "SwitchIngress.decision_mitigation"
+    alias: "decision_mitigation"
+  }
+  match_fields {
+    id: 1
+    name: "meta.result"
+    bitwidth: 32
+    match_type: EXACT
+  }
+  action_refs {
+    id: 23258667
+  }
+  size: 4
+}
+tables {
+  preamble {
+    id: 42396182
+    name: "SwitchIngress.fwd_tb"
+    alias: "fwd_tb"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ipv4.dst_addr"
+    bitwidth: 32
+    match_type: LPM
+  }
+  action_refs {
+    id: 16850952
+  }
+  action_refs {
+    id: 23258667
+  }
+  action_refs {
+    id: 21257015
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 41424052
+    name: "SwitchIngress.malware"
+    alias: "malware"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ipv4.src_addr"
+    bitwidth: 32
+    match_type: LPM
+  }
+  action_refs {
+    id: 21257015
+  }
+  action_refs {
+    id: 26524324
+  }
+  size: 10
+}
+tables {
+  preamble {
+    id: 46878031
+    name: "SwitchIngress.malware_inverse"
+    alias: "malware_inverse"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ipv4.dst_addr"
+    bitwidth: 32
+    match_type: LPM
+  }
+  action_refs {
+    id: 21257015
+  }
+  action_refs {
+    id: 26524324
+  }
+  size: 10
+}
+tables {
+  preamble {
+    id: 43139826
+    name: "SwitchIngress.lookup_feature0"
+    alias: "lookup_feature0"
+  }
+  match_fields {
+    id: 1
+    name: "meta.feature0"
+    bitwidth: 32
+    match_type: TERNARY
+  }
+  action_refs {
+    id: 29485796
+  }
+  action_refs {
+    id: 21257015
+  }
+  size: 17
+}
+tables {
+  preamble {
+    id: 40229018
+    name: "SwitchIngress.lookup_feature1"
+    alias: "lookup_feature1"
+  }
+  match_fields {
+    id: 1
+    name: "meta.feature1"
+    bitwidth: 32
+    match_type: TERNARY
+  }
+  action_refs {
+    id: 16844162
+  }
+  action_refs {
+    id: 21257015
+  }
+  size: 17
+}
+tables {
+  preamble {
+    id: 34896887
+    name: "SwitchIngress.lookup_feature2"
+    alias: "lookup_feature2"
+  }
+  match_fields {
+    id: 1
+    name: "meta.feature2"
+    bitwidth: 32
+    match_type: TERNARY
+  }
+  action_refs {
+    id: 21471247
+  }
+  action_refs {
+    id: 21257015
+  }
+  size: 6
+}
+tables {
+  preamble {
+    id: 50187718
+    name: "SwitchIngress.lookup_feature3"
+    alias: "lookup_feature3"
+  }
+  match_fields {
+    id: 1
+    name: "meta.feature3"
+    bitwidth: 32
+    match_type: TERNARY
+  }
+  action_refs {
+    id: 29537538
+  }
+  action_refs {
+    id: 21257015
+  }
+  size: 13
+}
+tables {
+  preamble {
+    id: 39252600
+    name: "SwitchIngress.lookup_feature4"
+    alias: "lookup_feature4"
+  }
+  match_fields {
+    id: 1
+    name: "meta.feature4"
+    bitwidth: 32
+    match_type: TERNARY
+  }
+  action_refs {
+    id: 17617303
+  }
+  action_refs {
+    id: 21257015
+  }
+  size: 12
+}
+tables {
+  preamble {
+    id: 46914386
+    name: "SwitchIngress.decision"
+    alias: "decision"
+  }
+  match_fields {
+    id: 1
+    name: "meta.code_f0[0:0]"
+    bitwidth: 1
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "meta.code_f1[0:0]"
+    bitwidth: 1
+    match_type: EXACT
+  }
+  match_fields {
+    id: 3
+    name: "meta.code_f2[0:0]"
+    bitwidth: 1
+    match_type: EXACT
+  }
+  match_fields {
+    id: 4
+    name: "meta.code_f3[1:0]"
+    bitwidth: 2
+    match_type: EXACT
+  }
+  match_fields {
+    id: 5
+    name: "meta.code_f4[1:0]"
+    bitwidth: 2
+    match_type: EXACT
+  }
+  action_refs {
+    id: 22118054
+  }
+  action_refs {
+    id: 29272149
+  }
+  size: 1
+}
+actions {
+  preamble {
+    id: 21257015
+    name: "NoAction"
+    alias: "NoAction"
+    annotations: "@noWarn(\"unused\")"
+  }
+}
+actions {
+  preamble {
+    id: 23418766
+    name: "SwitchIngress.struct2bitstring"
+    alias: "struct2bitstring"
+  }
+}
+actions {
+  preamble {
+    id: 18629507
+    name: "SwitchIngress.bitstring2struct"
+    alias: "bitstring2struct"
+  }
+}
+actions {
+  preamble {
+    id: 27615682
+    name: "SwitchIngress.init_flow_entry"
+    alias: "init_flow_entry"
+  }
+}
+actions {
+  preamble {
+    id: 29687724
+    name: "SwitchIngress.update_flow_entry"
+    alias: "update_flow_entry"
+  }
+}
+actions {
+  preamble {
+    id: 23258667
+    name: "SwitchIngress.drop"
+    alias: "drop"
+  }
+}
+actions {
+  preamble {
+    id: 16850952
+    name: "SwitchIngress.ipv4_forward"
+    alias: "ipv4_forward"
+  }
+  params {
+    id: 1
+    name: "dstAddr"
+    bitwidth: 48
+  }
+  params {
+    id: 2
+    name: "port"
+    bitwidth: 9
+  }
+}
+actions {
+  preamble {
+    id: 19914743
+    name: "SwitchIngress.m_action"
+    alias: "m_action"
+  }
+  params {
+    id: 1
+    name: "meter_id"
+    bitwidth: 32
+  }
+}
+actions {
+  preamble {
+    id: 26524324
+    name: "SwitchIngress.SetMalware"
+    alias: "SetMalware"
+  }
+  params {
+    id: 1
+    name: "malware_flag"
+    bitwidth: 4
+  }
+}
+actions {
+  preamble {
+    id: 29485796
+    name: "SwitchIngress.extract_feature0"
+    alias: "extract_feature0"
+  }
+  params {
+    id: 1
+    name: "tree"
+    bitwidth: 1
+  }
+}
+actions {
+  preamble {
+    id: 16844162
+    name: "SwitchIngress.extract_feature1"
+    alias: "extract_feature1"
+  }
+  params {
+    id: 1
+    name: "tree"
+    bitwidth: 1
+  }
+}
+actions {
+  preamble {
+    id: 21471247
+    name: "SwitchIngress.extract_feature2"
+    alias: "extract_feature2"
+  }
+  params {
+    id: 1
+    name: "tree"
+    bitwidth: 1
+  }
+}
+actions {
+  preamble {
+    id: 29537538
+    name: "SwitchIngress.extract_feature3"
+    alias: "extract_feature3"
+  }
+  params {
+    id: 1
+    name: "tree"
+    bitwidth: 2
+  }
+}
+actions {
+  preamble {
+    id: 17617303
+    name: "SwitchIngress.extract_feature4"
+    alias: "extract_feature4"
+  }
+  params {
+    id: 1
+    name: "tree"
+    bitwidth: 2
+  }
+}
+actions {
+  preamble {
+    id: 22118054
+    name: "SwitchIngress.read_lable"
+    alias: "read_lable"
+  }
+  params {
+    id: 1
+    name: "label"
+    bitwidth: 32
+  }
+}
+actions {
+  preamble {
+    id: 29272149
+    name: "SwitchIngress.write_default_class"
+    alias: "write_default_class"
+  }
+}
+counters {
+  preamble {
+    id: 315416835
+    name: "SwitchIngress.counter_true_attack"
+    alias: "counter_true_attack"
+  }
+  spec {
+    unit: PACKETS
+  }
+  size: 1
+}
+counters {
+  preamble {
+    id: 305359400
+    name: "SwitchIngress.counter_false_attack"
+    alias: "counter_false_attack"
+  }
+  spec {
+    unit: PACKETS
+  }
+  size: 1
+}
+counters {
+  preamble {
+    id: 303755448
+    name: "SwitchIngress.counter_false_benign"
+    alias: "counter_false_benign"
+  }
+  spec {
+    unit: PACKETS
+  }
+  size: 1
+}
+counters {
+  preamble {
+    id: 305783880
+    name: "SwitchIngress.counter_true_benign"
+    alias: "counter_true_benign"
+  }
+  spec {
+    unit: PACKETS
+  }
+  size: 1
+}
+meters {
+  preamble {
+    id: 346783082
+    name: "SwitchIngress.rsvp_meter"
+    alias: "rsvp_meter"
+  }
+  spec {
+    unit: PACKETS
+  }
+  size: 2
+}
+registers {
+  preamble {
+    id: 384297424
+    name: "SwitchIngress.flows0"
+    alias: "flows0"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 369
+      }
+    }
+  }
+  size: 16
+}
+registers {
+  preamble {
+    id: 370590766
+    name: "SwitchIngress.flows1"
+    alias: "flows1"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 369
+      }
+    }
+  }
+  size: 16
+}
+digests {
+  preamble {
+    id: 387936044
+    name: "int_cpu_digest_t"
+    alias: "int_cpu_digest_t"
+  }
+  type_spec {
+    struct {
+      name: "int_cpu_digest_t"
+    }
+  }
+}
+type_info {
+  structs {
+    key: "int_cpu_digest_t"
+    value {
+      members {
+        name: "ip_src"
+        type_spec {
+          bitstring {
+            bit {
+              bitwidth: 32
+            }
+          }
+        }
+      }
+      members {
+        name: "ip_dst"
+        type_spec {
+          bitstring {
+            bit {
+              bitwidth: 32
+            }
+          }
+        }
+      }
+      members {
+        name: "feature0"
+        type_spec {
+          bitstring {
+            bit {
+              bitwidth: 32
+            }
+          }
+        }
+      }
+      members {
+        name: "feature1"
+        type_spec {
+          bitstring {
+            bit {
+              bitwidth: 32
+            }
+          }
+        }
+      }
+      members {
+        name: "feature2"
+        type_spec {
+          bitstring {
+            bit {
+              bitwidth: 32
+            }
+          }
+        }
+      }
+      members {
+        name: "feature3"
+        type_spec {
+          bitstring {
+            bit {
+              bitwidth: 32
+            }
+          }
+        }
+      }
+      members {
+        name: "feature4"
+        type_spec {
+          bitstring {
+            bit {
+              bitwidth: 32
+            }
+          }
+        }
+      }
+      members {
+        name: "malware"
+        type_spec {
+          bitstring {
+            bit {
+              bitwidth: 4
+            }
+          }
+        }
+      }
+      members {
+        name: "class"
+        type_spec {
+          bitstring {
+            bit {
+              bitwidth: 4
+            }
+          }
+        }
+      }
+    }
+  }
+}
