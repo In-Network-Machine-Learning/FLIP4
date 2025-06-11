@@ -5,7 +5,8 @@
 FLIP4 is a federated learning-based framework for in-network traffic analysis. This repo is the artifact for the paper "Federated In-Network Machine Learning for Privacy-Preserving IoT Traffic Analysis" published on ACM Transactions on Internet Technology. [PDF](https://dl.acm.org/doi/pdf/10.1145/3696354)
 
 ## Prepare your environment
-This setup is based on [BMv2](https://github.com/p4lang/behavioral-model) in Ubuntu 20.04.
+This setup is based on [BMv2](https://github.com/p4lang/behavioral-model) in Ubuntu 20.04. 
+We recommend the following guideline to set up a [VM environment](https://github.com/p4lang/tutorials/tree/master/vm-ubuntu-20.04) with Ubuntu 20.04
 
 Please make sure the following packages are installed by running: 
 ```
