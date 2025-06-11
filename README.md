@@ -5,7 +5,8 @@
 FLIP4 is a federated learning-based framework for in-network traffic analysis. This repo is the artifact for the paper "Federated In-Network Machine Learning for Privacy-Preserving IoT Traffic Analysis" published on ACM Transactions on Internet Technology. [PDF](https://dl.acm.org/doi/pdf/10.1145/3696354)
 
 ## Prepare your environment
-This setup is based on [BMv2](https://github.com/p4lang/behavioral-model) in Ubuntu 20.04.
+This setup is based on [BMv2](https://github.com/p4lang/behavioral-model) in Ubuntu 20.04. 
+We recommend the following guideline to set up a [VM environment](https://github.com/p4lang/tutorials/tree/master/vm-ubuntu-20.04) with Ubuntu 20.04
 
 Please make sure the following packages are installed by running: 
 ```
@@ -31,6 +32,20 @@ $ python3 FL_controller.py
 ```
 
 * The source of the dataset: [CIC-IDS2017](https://www.unb.ca/cic/datasets/ids-2017.html)
+
+## FLIP4 Workflow
+
+![image](https://github.com/In-Network-Machine-Learning/FLIP4/blob/main/image/FLPI4_workflow.png)
+
+### Aggregator
+The file `fedavg.py` continuously receives model parameters from the end nodes (clients) and aggregates the received parameters to form a global model based on the FedAvg algorithm.  
+
+### Control plane logic
+The file `FL_controller.py` is responsible for model parameter sharing and communication between the local data plane and the aggregator for updates. 
+
+### Data plane logic
+The file `client_mapper.py` maps the ML model to the data plane for in-network inference. The model can be further replaced by other classical ML models by [Planter](https://github.com/In-Network-Machine-Learning/Planter)
+
 
 
 ## Citation
