@@ -37,14 +37,14 @@ $ python3 FL_controller.py
 
 ![image](https://github.com/In-Network-Machine-Learning/FLIP4/blob/main/image/FLPI4_workflow.png)
 
-# Aggregator
-The file $fedavg.py$ continuously receives model parameters from the end nodes (clients) and aggregates the received parameters to form a global model based on the FedAvg algorithm.  
+### Aggregator
+The file `fedavg.py` continuously receives model parameters from the end nodes (clients) and aggregates the received parameters to form a global model based on the FedAvg algorithm.  
 
-# Control plane logic
-The file $FL_controller.py$ is responsible for model parameter sharing and communication between the local data plane and the aggregator for updates. 
+### Control plane logic
+The file `FL_controller.py` is responsible for model parameter sharing and communication between the local data plane and the aggregator for updates. 
 
-# Data plane logic
-The file $client_mapper.py$ maps the ML model to the data plane for in-network inference. The model can be further replaced by other classical ML models by [Planter](https://github.com/In-Network-Machine-Learning/Planter)
+### Data plane logic
+The file `client_mapper.py` maps the ML model to the data plane for in-network inference. The model can be further replaced by other classical ML models by [Planter](https://github.com/In-Network-Machine-Learning/Planter)
 
 
 
